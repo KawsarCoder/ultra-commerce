@@ -17,9 +17,11 @@ const Cosmetics = () => {
   return (
     <div>
       <h3>All products</h3>
-      {cosmeticsItem.map((cosmetics) => (
-        <Product key={cosmetics.id} product={cosmetics}></Product>
-      ))}
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4">
+        {cosmeticsItem.map((cosmetics) => (
+          <Product key={cosmetics.id} product={cosmetics}></Product>
+        ))}
+      </div>
     </div>
   );
 };

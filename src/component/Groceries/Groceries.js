@@ -13,9 +13,11 @@ const Groceries = () => {
   return (
     <div>
       <h3>All products</h3>
-      {groceriesItem.map((groceries) => (
-        <Product key={groceries.id} product={groceries}></Product>
-      ))}
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+        {groceriesItem.map((groceries) => (
+          <Product key={groceries.id} product={groceries}></Product>
+        ))}
+      </div>
     </div>
   );
 };

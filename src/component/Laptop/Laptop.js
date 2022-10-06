@@ -14,9 +14,11 @@ const Laptop = () => {
   return (
     <div>
       <h3>All products</h3>
-      {laptopItem.map((laptop) => (
-        <Product key={laptop.id} product={laptop}></Product>
-      ))}
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+        {laptopItem.map((laptop) => (
+          <Product key={laptop.id} product={laptop}></Product>
+        ))}
+      </div>
     </div>
   );
 };

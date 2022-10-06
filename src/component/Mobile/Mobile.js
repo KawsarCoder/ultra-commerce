@@ -14,11 +14,13 @@ const Mobile = () => {
   }
   // console.log(laptopItem);
   return (
-    <div>
+    <div className="container">
       <h3>All products</h3>
-      {phoneItem.map((phone) => (
-        <Product key={phone.id} product={phone}></Product>
-      ))}
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+        {phoneItem.map((phone) => (
+          <Product key={phone.id} product={phone}></Product>
+        ))}
+      </div>
     </div>
   );
 };

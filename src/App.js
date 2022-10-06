@@ -8,6 +8,7 @@ import Main from "./component/Main/Main";
 import Cosmetics from "./component/Cosmetics/Cosmetics";
 import Groceries from "./component/Groceries/Groceries";
 import Decoration from "./component/Decoration/Decoration";
+import Buynow from "./component/Buynow/Buynow";
 
 function App() {
   const router = createBrowserRouter([
@@ -64,7 +65,18 @@ function App() {
           },
           element: <Decoration></Decoration>,
         },
-        { path: "about", element: <About></About> },
+        {
+          path: "buy/:productId",
+          loader: async ({ params }) => {
+            // console.log(params);
+            return fetch(`https://dummyjson.com/products/${params.productId}`);
+          },
+          element: <Buynow></Buynow>,
+        },
+        {
+          path: "about",
+          element: <About></About>,
+        },
       ],
     },
     { path: "*", element: <div> Error: This path is not available</div> },
